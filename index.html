@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Witch's Ledger — Umineko Study Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ambient orbs -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- ─── NAVIGATION ─── -->
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('home')">
+    <svg class="nav-logo-butterfly" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 14 C10 8, 2 6, 2 12 C2 17, 8 18, 14 14Z" fill="#c9a84c" opacity="0.9"/>
+      <path d="M14 14 C18 8, 26 6, 26 12 C26 17, 20 18, 14 14Z" fill="#8b1a1a" opacity="0.9"/>
+      <path d="M14 14 C10 20, 4 22, 5 18 C6 14, 10 15, 14 14Z" fill="#3d1a6e" opacity="0.9"/>
+      <path d="M14 14 C18 20, 24 22, 23 18 C22 14, 18 15, 14 14Z" fill="#1b3a5c" opacity="0.9"/>
+      <circle cx="14" cy="14" r="1.5" fill="#c9a84c"/>
+    </svg>
+    <span class="nav-logo-text">Witch's Ledger</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a href="#" onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme" onclick="cycleTheme()">
+      <span id="themeIcon">◐</span>
+    </button>
+    <a href="https://github.com/cevique/Witchs-Ledger" target="_blank" rel="noopener" class="btn-github">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      GitHub
+    </a>
+  </div>
+</nav>
+
+<!-- ─── HOME PAGE ─── -->
+<div class="page active" id="page-home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-eyebrow">✦ A Local-First Study Companion ✦</p>
+    <h1 class="hero-title"><em>Witch's Ledger</em></h1>
+    <p class="hero-title-line2">Study Tracker</p>
+    <h2 class="hero-eyebrow">🦋 Umineko Study Tracker 🦋</h2>
+    <div class="hero-divider"></div>
+    <p class="hero-quote">"When the seagulls cry, they are crying over your unfinished past papers."</p>
+    <p class="hero-quote-attr">— Beatrice, probably</p>
+    <div class="hero-cta">
+      <a href="https://github.com/cevique/Witchs-Ledger" target="_blank" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        View on GitHub
+      </a>
+      <button class="btn-secondary" onclick="showPage('contact')">
+        ✦ Get in Touch
+      </button>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Supported Tests -->
+  <section class="tests-section">
+    <div style="max-width:900px;margin:0 auto;text-align:center;">
+      <p class="section-label">Supported Exams</p>
+      <h2 class="section-title" style="margin-bottom:0.5rem;">Every Test. <em>One Tracker.</em></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub" style="margin-bottom:2rem;">Entry tests and board exams, all in one place.</p>
+      <div class="badges-container">
+        <span class="badge badge-gold">GIKI</span>
+        <span class="badge badge-crimson">NUST</span>
+        <span class="badge badge-royal">PIEAS</span>
+        <span class="badge badge-blue">FAST-NU</span>
+        <span class="badge badge-gold">TCAT</span>
+        <span class="badge badge-crimson">Air University</span>
+        <span class="badge badge-royal">USAT</span>
+        <span class="badge badge-blue">SAT</span>
+        <span class="badge badge-gold">IELTS</span>
+        <span class="badge badge-crimson">FBISE Pre-Medical</span>
+        <span class="badge badge-royal">FBISE Pre-Engineering</span>
+        <span class="badge badge-blue">FBISE ICS (Physics)</span>
+        <span class="badge badge-gold">FBISE ICS (Statistics)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <div class="stat-num">9</div>
+      <div class="stat-label">Entry Tests</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4</div>
+      <div class="stat-label">FBISE Programs</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">Study Sessions</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0</div>
+      <div class="stat-label">Excuses</div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="section">
+    <p class="section-label">What's Inside</p>
+    <h2 class="section-title">Built for <em>Serious</em> Students</h2>
+    <div class="section-divider"></div>
+    <p class="section-sub">Everything you need to conquer entry tests, nothing you don't.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🎯</span>
+        <div class="feature-title">Smart Goals</div>
+        <div class="feature-desc">Set daily targets for MCQs, study hours, review sessions, and past papers — both globally and per subject. Fully customizable, fully yours.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">⏱️</span>
+        <div class="feature-title">Pomodoro Timer</div>
+        <div class="feature-desc">Built-in Pomodoro timer that auto-logs your study hours on completion. No manual entry — the witch and the sorcerer count your effort for you.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔥</span>
+        <div class="feature-title">Streak Tracking</div>
+        <div class="feature-desc">Maintain your daily study streak and watch your 14-day history unfold on the Dashboard. The chain must not be broken.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📚</span>
+        <div class="feature-title">Board Exam Support</div>
+        <div class="feature-desc">Full FBISE coverage — Pre-Medical, Pre-Engineering, ICS (Phy & Stats) with all compulsory subjects included automatically.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🌙</span>
+        <div class="feature-title">Umineko Theme</div>
+        <div class="feature-desc">Golden amber, deep crimson, midnight blue, regal purple. Dark/light mode with OS preference detection. Study in style.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">💾</span>
+        <div class="feature-title">Local-First</div>
+        <div class="feature-desc">All your data lives on your device. No accounts, no cloud, no tracking. Built with TanStack Router and React 19 for a snappy experience.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section class="section" style="padding-top:0;">
+    <p class="section-label">Roadmap</p>
+    <h2 class="section-title">What's <em>Coming</em></h2>
+    <div class="section-divider"></div>
+    <p class="section-sub" style="margin-bottom:2.5rem;">The witch and sorcerer are still writing new chapters.</p>
+    <div class="roadmap-list">
+      <div class="roadmap-item done"><span class="roadmap-check">✦</span><span class="roadmap-text">Entry test selection (GIKI, NUST, PIEAS, TCAT, FAST-NU, Air, USAT, SAT, IELTS)</span></div>
+      <div class="roadmap-item done"><span class="roadmap-check">✦</span><span class="roadmap-text">FBISE board exam support with compulsory subjects</span></div>
+      <div class="roadmap-item done"><span class="roadmap-check">✦</span><span class="roadmap-text">Global + per-subject daily goals (MCQs, hours, review, past papers)</span></div>
+      <div class="roadmap-item done"><span class="roadmap-check">✦</span><span class="roadmap-text">Pomodoro timer with auto-logging</span></div>
+      <div class="roadmap-item done"><span class="roadform-check">✦</span><span class="roadmap-text">Streak tracking & 14-day history</span></div>
+      <div class="roadmap-item done"><span class="roadmap-check">✦</span><span class="roadmap-text">Umineko theme (gold/red/blue/purple) + minimalist B&W + dark/light mode</span></div>
+      <div class="roadmap-item todo"><span class="roadmap-check">○</span><span class="roadmap-text">Server-side auth — multi-user support with email/password login</span></div>
+      <div class="roadmap-item todo"><span class="roadmap-check">○</span><span class="roadmap-text">Cloud sync & cross-device support</span></div>
+      <div class="roadmap-item todo"><span class="roadmap-check">○</span><span class="roadmap-text">Mobile app (PWA)</span></div>
+      <div class="roadmap-item todo"><span class="roadmap-check">○</span><span class="roadmap-text">Export progress reports (PDF)</span></div>
+    </div>
+  </section>
+
+  <!-- Social / Support -->
+  <section class="social-section">
+    <p class="section-label">Support the Project</p>
+    <h2 class="section-title" style="font-size:2rem;">If this helped you cook your test</h2>
+    <div class="section-divider"></div>
+    <div class="social-grid">
+      <a href="https://github.com/cevique/Witchs-Ledger" target="_blank" class="social-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        ⭐ Star on GitHub
+      </a>
+      <a href="https://github.com/cevique/Witchs-Ledger/fork" target="_blank" class="social-btn">🍴 Fork It</a>
+      <a href="https://ko-fi.com/cevique" target="_blank" class="social-btn">☕ Ko-fi</a>
+      <a href="https://github.com/sponsors/cevique" target="_blank" class="social-btn">💛 Sponsor</a>
+      <a href="https://github.com/cevique/Witchs-Ledger/issues" target="_blank" class="social-btn">🐛 Report a Bug</a>
+      <a href="https://github.com/cevique/Witchs-Ledger/pulls" target="_blank" class="social-btn">🔀 Contribute</a>
+    </div>
+    <p style="margin-top:2rem;font-size:0.85rem;font-style:italic;color:var(--text3);">Contributors</p>
+    <a href="https://github.com/cevique/Witchs-Ledger/graphs/contributors" target="_blank" style="display:inline-block;margin-top:0.5rem;">
+      <img src="https://contrib.rocks/image?repo=cevique/Witchs-Ledger" alt="Contributors" style="border-radius:4px;opacity:0.85;" onerror="this.style.display='none'" />
+    </a>
+  </section>
+
+  <footer>
+    <p>Made with ☕ and existential dread &mdash; <em>Witch's Ledger — Umineko Study Tracker</em> &mdash; AGPL v3.0</p>
+    <p style="margin-top:0.4rem;font-size:0.75rem;">"Then I'll tell you something crucial. No matter how many times you repeat it, the future cannot be changed." — Beatrice</p>
+  </footer>
+</div>
+
+<!-- ─── CONTACT PAGE ─── -->
+<div class="page" id="page-contact">
+
+  <section class="contact-hero">
+    <p class="hero-eyebrow" style="opacity:1;animation:fadeUp 0.6s forwards;">✦ Send a Message ✦</p>
+    <h1 class="hero-title" style="font-size:clamp(2.5rem,6vw,5rem);opacity:1;animation:fadeUp 0.7s 0.1s both;">Get in <em>Touch</em></h1>
+    <div class="hero-divider" style="opacity:1;animation:fadeUp 0.7s 0.2s both;"></div>
+    <p class="hero-quote" style="opacity:1;animation:fadeUp 0.7s 0.3s both;">Have a suggestion, found a bug, or just want to say the tracker helped you get into your dream university? I'd love to hear it.</p>
+  </section>
+
+  <div class="contact-form-wrapper">
+    <div class="form-card" style="animation:fadeUp 0.8s 0.4s both;opacity:0;">
+
+      <!-- IMPORTANT: Replace YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, YOUR_PUBLIC_KEY -->
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="from_name">Your Name</label>
+          <input class="form-input" type="text" id="from_name" name="from_name" placeholder="Battler Ushiromiya" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="from_email">Email Address</label>
+          <input class="form-input" type="email" id="from_email" name="from_email" placeholder="battler@rokkenjima.jp" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="subject">Subject</label>
+          <input class="form-input" type="text" id="subject" name="subject" placeholder="About the tracker..." required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Write your message here... The witch and the sorcerer are listening." required></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="submitBtn">
+          Send Message ✦
+        </button>
+      </form>
+
+      <p style="margin-top:1.5rem;font-size:0.8rem;font-style:italic;color:var(--text3);text-align:center;">
+        Powered by EmailJS &mdash; your message goes directly to the developer.
+      </p>
+    </div>
+
+    <!-- Also show GitHub link -->
+    <div style="text-align:center;margin-top:2rem;">
+      <p style="font-size:0.9rem;color:var(--text3);margin-bottom:1rem;font-style:italic;">Or open an issue on GitHub</p>
+      <a href="https://github.com/cevique/Witchs-Ledger/issues" target="_blank" class="btn-secondary" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;padding:0.7rem 1.8rem;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        Open an Issue
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Made with ☕ and existential dread &mdash; <em>Witch's Ledger — Umineko Study Tracker</em> &mdash; AGPL v3.0</p>
+  </footer>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
