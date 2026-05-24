@@ -15,7 +15,7 @@ Built with vanilla HTML, CSS, and JavaScript — deployed on GitHub Pages.
 
 ---
 
-[✨ Features](#-features) · [🧠 Tech Stack](#-tech-stack) · [🗺️ Roadmap](#-roadmap) · [⭐ Support](#-support) · [📄 License](#-license)
+[✨ Features](#-features) · [🧠 Tech Stack](#-tech-stack) · [🗺️ Roadmap](#%EF%B8%8F-roadmap) · [⭐ Support](#-support) · [📄 License](#-license)
 
 </div>
 
