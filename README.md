@@ -9,9 +9,9 @@ Built with vanilla HTML, CSS, and JavaScript — deployed on GitHub Pages.
 
 ---
 
-![GitHub stars](https://img.shields.io/github/stars/cevique/Witchs-Ledger?style=flat-square\&color=gold)
-![GitHub forks](https://img.shields.io/github/forks/cevique/Witchs-Ledger?style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/cevique/Witchs-Ledger?style=flat-square)
+![GitHub stars](https://img.shields.io/github/stars/cevique/Witchs-Ledger-Website?style=flat-square\&color=gold)
+![GitHub forks](https://img.shields.io/github/forks/cevique/Witchs-Ledger-Website?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/cevique/Witchs-Ledger-Website?style=flat-square)
 
 ---
 
