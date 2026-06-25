@@ -95,7 +95,6 @@ If you'd like to support continued development:
 
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20Me-ff5e5b?style=flat-square&logo=ko-fi)](https://ko-fi.com/cevique)
 [![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-Sponsor%20Me-ea4aaa?style=flat-square&logo=github-sponsors)](https://github.com/sponsors/cevique)
-<!-- [![PayPal](https://img.shields.io/badge/PayPal-Donate-00457c?style=flat-square&logo=paypal)](https://paypal.me/cevique) -->
 
 ---
 
